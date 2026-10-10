@@ -1,0 +1,148 @@
+/* Colors and speeds are set from CONFIG in script.js. The values here are just defaults. */
+:root{
+  --ink:#2d2a3e; --accent:#dd2370; --accent2:#7c4dff; --card:#fff6fa;
+  --wobble:1; --cat-speed:1; --cat-size:clamp(78px,21vw,124px);
+  /* No web fonts, so it works offline. To use your own font: drop a .woff2 in assets/ and add
+     @font-face{font-family:"MyFont";src:url("assets/myfont.woff2")}  then put "MyFont" first below. */
+  --font-fun:"Chalkboard SE","Marker Felt","Segoe Print","Bradley Hand","Comic Sans MS","Comic Neue",cursive;
+  --font-body:ui-rounded,"Nunito","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--font-body);overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:4px solid var(--accent2);outline-offset:4px}
+#confetti{position:fixed;inset:0;width:100%;height:100%;z-index:60;pointer-events:none}
+
+/* Buttons */
+.btn{font:800 1.05rem var(--font-body);letter-spacing:.04em;padding:.95em 1.5em;border:3px solid var(--ink);border-radius:999px;box-shadow:0 5px 0 var(--ink);cursor:pointer;touch-action:manipulation;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(-2px) rotate(-1.5deg)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+.btn:disabled{opacity:.7;pointer-events:none}
+.btn--pink{background:var(--accent);color:#fff}
+.btn--purple{background:var(--accent2);color:#fff}
+.btn--white{background:#fff;color:var(--ink)}
+
+/* Welcome */
+.welcome{position:fixed;inset:0;z-index:50;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.welcome.leaving{animation:fade-out .4s forwards}
+.welcome-text{margin:0 0 28px;font:700 clamp(1.6rem,6.5vw,2.6rem)/1.2 var(--font-fun)}
+.peek{position:fixed;left:50%;bottom:0;width:clamp(110px,30vw,160px);transform:translateX(-50%);animation:peek 3s ease-in-out infinite}
+.peek svg{display:block;width:100%;height:auto}
+@keyframes peek{50%{transform:translateX(-50%) translateY(14%)}}
+@keyframes fade-out{to{opacity:0}}
+
+/* Page */
+.page{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:34px;padding:76px 20px 96px}
+.greeting{margin:0;text-align:center;font:800 clamp(2rem,9vw,4.2rem)/1.1 var(--font-fun);max-width:14em;outline:none}
+.word{display:inline-block;white-space:nowrap}
+.letter{display:inline-block;color:var(--lc);animation:pop .6s cubic-bezier(.3,1.6,.5,1) calc(var(--i)*40ms) both,wave 2.8s ease-in-out calc(1.2s + var(--i)*90ms) infinite}
+@keyframes pop{from{transform:translateY(.8em) scale(.2) rotate(-25deg);opacity:0}}
+@keyframes wave{50%{transform:translateY(-.07em) rotate(var(--r))}}
+
+/* Photo: three nested wrappers, each with a different duration, so the motion never quite repeats */
+.stage{position:relative;margin-bottom:46px}
+.photo-drift{animation:drift calc(11s / var(--wobble)) ease-in-out infinite alternate}
+.photo-bob{animation:bob calc(3.7s / var(--wobble)) ease-in-out infinite}
+.photo-wobble{animation:wob calc(6.3s / var(--wobble)) ease-in-out infinite;transform-origin:50% 60%}
+@keyframes drift{0%{transform:translateX(-16px)}45%{transform:translateX(10px)}100%{transform:translateX(18px)}}
+@keyframes bob{0%,100%{transform:translateY(0)}30%{transform:translateY(-14px)}60%{transform:translateY(5px)}80%{transform:translateY(-8px)}}
+@keyframes wob{0%{transform:rotate(-5deg)}12%{transform:rotate(4deg)}20%{transform:rotate(-2deg)}38%{transform:rotate(6deg)}47%{transform:rotate(1deg)}63%{transform:rotate(-6deg)}72%{transform:rotate(-1deg)}86%{transform:rotate(5deg)}100%{transform:rotate(-5deg)}}
+.photo-frame{position:relative;padding:12px;background:#fff;border:4px solid var(--accent);border-radius:26px;box-shadow:6px 8px 0 var(--accent2);animation:drop .9s cubic-bezier(.2,1.4,.4,1) .2s both}
+.photo-frame::before{content:"";position:absolute;top:-16px;left:50%;width:84px;height:26px;margin-left:-42px;background:rgba(255,210,63,.85);transform:rotate(-3deg);border-radius:4px}
+.photo-frame img{display:block;width:min(74vw,340px);height:auto;min-height:220px;max-height:min(52vh,460px);object-fit:contain;border-radius:14px;background:#fff}
+@keyframes drop{from{transform:translateY(-120vh) rotate(-30deg)}}
+
+/* Cats */
+.cat{position:absolute;z-index:5;width:var(--cat-size);padding:0;margin:0;border:0;background:none;font:inherit;color:var(--ink);cursor:pointer;touch-action:manipulation}
+.cat:focus-visible{border-radius:18px}
+.cat svg{display:block;width:100%;height:auto;overflow:visible}
+.cat-move,.cat-fx{display:block;transform-origin:50% 100%}
+.cat--a{left:calc(var(--cat-size)*-.45);bottom:calc(var(--cat-size)*-.42)}
+.cat--b{right:calc(var(--cat-size)*-.45);bottom:calc(var(--cat-size)*-.42)}
+.cat--c{right:calc(var(--cat-size)*-.35);top:calc(var(--cat-size)*-.55)}
+.cat--d{position:relative;margin-top:8px}
+@media (prefers-reduced-motion:no-preference){
+  .cat--c{position:fixed;top:13vh;left:4vw;right:auto;width:calc(var(--cat-size)*.85)}
+}
+.cat--a .cat-move{animation:bounce calc(1.15s / var(--cat-speed)) ease-in-out infinite}
+.cat--b .cat-move{animation:sway calc(1.7s / var(--cat-speed)) ease-in-out infinite}
+.cat--c .cat-move{animation:drift-cat calc(42s / var(--cat-speed)) ease-in-out infinite}
+.cat--c .cat-fx{animation:hover 3s ease-in-out infinite}
+.cat--d .cat-move{animation:breathe calc(2.4s / var(--cat-speed)) ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0) scale(1.06,.94)}45%,55%{transform:translateY(-22px) scale(.97,1.04)}}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg) translateY(-8px)}}
+@keyframes hover{50%{transform:translateY(-10px) rotate(3deg)}}
+@keyframes breathe{50%{transform:scale(1.04,.97)}}
+@keyframes drift-cat{0%,100%{transform:translate(0,0) rotate(-6deg)}20%{transform:translate(52vw,6vh) rotate(5deg)}40%{transform:translate(24vw,28vh) rotate(-4deg)}60%{transform:translate(60vw,44vh) rotate(6deg)}80%{transform:translate(8vw,52vh) rotate(-5deg)}}
+/* Dancing (on open, and during MORE CHAOS) and click reaction */
+.is-dancing .cat-fx{animation:dance .55s ease-in-out infinite}
+.is-chaos .cat-fx{animation:dance .26s ease-in-out infinite}
+.cat.is-reacting .cat-fx{animation:hop .7s ease-out}
+@keyframes dance{0%,100%{transform:translateY(0) rotate(-8deg)}25%,75%{transform:translateY(-16px) rotate(0)}50%{transform:translateY(0) rotate(8deg)}}
+@keyframes hop{30%{transform:translateY(-34px) scale(.95,1.08) rotate(-8deg)}60%{transform:translateY(0) scale(1.08,.9)}80%{transform:translateY(-10px) rotate(6deg)}}
+.cat-bubble{position:absolute;left:50%;bottom:100%;margin-bottom:2px;z-index:6;width:max-content;max-width:min(60vw,220px);padding:.4em .7em;background:#fff;border:2.5px solid var(--ink);border-radius:16px;box-shadow:0 3px 0 var(--ink);font:800 .85rem/1.25 var(--font-body);text-align:center;pointer-events:none;opacity:0;transform:translateX(calc(-50% + var(--shift,0px))) scale(.6);transition:opacity .15s,transform .2s cubic-bezier(.3,1.6,.5,1)}
+.cat-bubble.show{opacity:1;transform:translateX(calc(-50% + var(--shift,0px))) scale(1)}
+/* Inside the cat SVGs */
+.eyes{transform-box:fill-box;transform-origin:center;animation:blink 4.6s var(--d,0s) infinite}
+.hat{transform-box:fill-box;transform-origin:50% 100%;animation:hat 2.4s var(--d,0s) ease-in-out infinite}
+.tail{transform-box:fill-box;transform-origin:0 100%;animation:wag 1.6s var(--d,0s) ease-in-out infinite}
+.arm-l{transform-box:fill-box;transform-origin:100% 100%;animation:arm-l .9s ease-in-out infinite}
+.arm-r{transform-box:fill-box;transform-origin:0 100%;animation:arm-r .9s ease-in-out infinite}
+.spark{transform-box:fill-box;transform-origin:center;animation:twinkle 2s var(--d,0s) ease-in-out infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+@keyframes hat{50%{transform:rotate(5deg)}}
+@keyframes wag{50%{transform:rotate(14deg)}}
+@keyframes arm-l{50%{transform:rotate(-12deg)}}
+@keyframes arm-r{50%{transform:rotate(12deg)}}
+
+/* Controls + message card */
+.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;animation:rise .7s ease-out .9s both}
+@keyframes rise{from{transform:translateY(30px);opacity:0}}
+.card{width:min(100%,34rem);padding:26px 24px;background:var(--card);border:3px solid var(--ink);border-radius:24px;box-shadow:6px 6px 0 var(--accent);transform:rotate(-1deg);outline:none;animation:card-in .7s cubic-bezier(.3,1.4,.5,1) both}
+@keyframes card-in{from{transform:translateY(24px) scale(.96) rotate(2deg);opacity:0}}
+.message{margin:0;font-size:1.15rem;line-height:1.65;white-space:pre-line}
+.signature{margin:14px 0 0;font:700 1.2rem var(--font-fun);text-align:right}
+.signature:empty{display:none}
+
+/* Floating messages, hearts, decorations, bunting, music button */
+#float-layer{position:fixed;inset:0;z-index:70;pointer-events:none;overflow:hidden}
+.toast{position:absolute;max-width:86vw;padding:.35em .8em;background:#fff;border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--c);font:800 clamp(1rem,4.6vw,1.6rem)/1.15 var(--font-fun);text-align:center;transform:translate(-50%,-50%) rotate(var(--rot));animation:toast 2.3s ease-out forwards}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,-30%) rotate(var(--rot)) scale(.5)}12%{opacity:1;transform:translate(-50%,-50%) rotate(var(--rot)) scale(1.12)}22%{transform:translate(-50%,-50%) rotate(var(--rot)) scale(1)}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-130%) rotate(var(--rot))}}
+.heart{position:absolute;font-size:22px;animation:heart 1.2s ease-out forwards}
+@keyframes heart{from{opacity:1;transform:translate(0,0) scale(.6)}to{opacity:0;transform:translate(var(--dx),-90px) scale(1.2)}}
+.decor{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.decor span{position:absolute;opacity:.8;animation:twinkle 3s ease-in-out infinite}
+@keyframes twinkle{50%{transform:scale(1.5) rotate(20deg);opacity:.35}}
+.bunting{position:fixed;top:0;left:0;right:0;z-index:4;display:flex;justify-content:center;pointer-events:none;animation:bunting-in .8s cubic-bezier(.3,1.4,.5,1) both}
+.flag{flex:0 0 46px;height:40px;background:var(--c);clip-path:polygon(4% 0,96% 0,50% 100%);transform-origin:50% 0;animation:flag 3s ease-in-out infinite;animation-delay:calc(var(--i)*-.4s)}
+@keyframes flag{50%{transform:rotate(5deg)}}
+@keyframes bunting-in{from{transform:translateY(-100%)}}
+.music-toggle{position:fixed;top:52px;right:14px;z-index:5;width:46px;height:46px;display:grid;place-items:center;padding:0;background:#fff;border:3px solid var(--ink);border-radius:50%;box-shadow:0 4px 0 var(--ink);font-size:1.3rem;cursor:pointer;touch-action:manipulation}
+.music-toggle:not(.is-off) span{animation:bounce 1s ease-in-out infinite}
+.music-toggle.is-off::after{content:"";position:absolute;width:60%;height:3px;background:var(--ink);border-radius:2px;transform:rotate(-45deg)}
+.music-toggle.is-bad{opacity:.5}
+
+/* Mocha & Maggie (they reuse the cat bounce/dance/bubble styles) */
+.security{width:min(100%,30rem);padding:20px 14px 22px;background:#fff;border:3px dashed var(--ink);border-radius:22px;text-align:center}
+.sec-title{display:inline-block;margin:-36px 0 14px;padding:.25em .8em;background:var(--ink);color:#fff;border-radius:999px;font:800 1.05rem var(--font-fun);transform:rotate(-2deg)}
+.sec-row{display:flex;justify-content:center;gap:10px}
+.dog-card{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center}
+.cat.dog{position:relative;width:100%;max-width:150px}
+.dog-name{margin:4px 0 0;font:800 1.2rem var(--font-fun)}
+.dog-role{margin:0;font-size:.95rem}
+.dog--mocha .cat-move{animation:sway calc(2.2s / var(--cat-speed)) ease-in-out infinite}
+.dog--maggie .cat-move{animation:bounce calc(1.7s / var(--cat-speed)) ease-in-out infinite}
+.tail-l{transform-origin:100% 100%}
+.dog-photo{position:relative;display:block;width:82%;margin:30% auto 0}
+.dog-photo img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:4px solid var(--ink);border-radius:50%;background:#fff}
+.cat .dog-hat{position:absolute;left:50%;top:-36%;width:48%;height:auto;transform:translateX(-50%)}
+.dog-photo i{position:absolute;right:-8%;bottom:-2%;font-size:1.8rem;font-style:normal}
+.approval{display:inline-block;margin:18px 0 0;padding:.35em .9em;border:3px solid #0b7a5c;border-radius:12px;color:#0b7a5c;font:800 1.1rem var(--font-fun);transform:rotate(-2deg);animation:stamp .5s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes stamp{from{transform:scale(2.2) rotate(-12deg);opacity:0}}
+
+/* Reduced motion: no movement at all (JS also skips confetti) */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

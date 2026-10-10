@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="psst... someone made you something 🎂">
+<title>Happy Birthday! 🎂</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="float-layer" aria-hidden="true"></div>
+<p id="sr-status" class="sr-only" aria-live="polite"></p>
+
+<!-- Welcome screen -->
+<section id="welcome" class="welcome">
+  <div>
+    <p id="welcome-text" class="welcome-text">yoooooo... someone made you something 🎂</p>
+    <button id="open-btn" class="btn btn--pink" type="button">OPEN YOUR SURPRISE</button>
+  </div>
+  <div id="peek-cat" class="peek" aria-hidden="true"></div>
+</section>
+
+<!-- Main birthday page  -->
+<main id="main" hidden>
+  <div id="bunting" class="bunting" aria-hidden="true"></div>
+  <div id="decor" class="decor" aria-hidden="true"></div>
+  <button id="music-toggle" class="music-toggle" type="button" aria-label="Birthday music" aria-pressed="false"><span aria-hidden="true">🎵</span></button>
+
+  <div class="page">
+    <h1 id="greeting" class="greeting" tabindex="-1">HAPPY BIRTHDAY!! 🎂</h1>
+
+    <div class="stage">
+      <div class="photo-drift"><div class="photo-bob"><div class="photo-wobble">
+        <div class="photo-frame"><img id="photo" alt=""></div>
+      </div></div></div>
+      <button id="cat-a" class="cat cat--a" type="button" aria-label="Orange cat in a party hat. Tap for a birthday reaction."></button>
+      <button id="cat-b" class="cat cat--b" type="button" aria-label="White cat cheering in a party hat. Tap for a birthday reaction."></button>
+      <button id="cat-c" class="cat cat--c" type="button" aria-label="Floating grey cat in a party hat. Tap for a birthday reaction."></button>
+    </div>
+
+    <div class="controls">
+      <button id="chaos-btn" class="btn btn--pink" type="button">MORE CHAOS 🎉</button>
+      <button id="last-btn" class="btn btn--white" type="button" aria-controls="message-card">ONE LAST THING...</button>
+    </div>
+
+    <section id="message-card" class="card" hidden tabindex="-1" aria-labelledby="card-title">
+      <h2 id="card-title" class="sr-only">A birthday message for you</h2>
+      <p id="message" class="message"></p>
+      <p id="signature" class="signature"></p>
+    </section>
+
+    <section class="security" aria-labelledby="sec-title">
+      <h2 id="sec-title" class="sec-title"></h2>
+      <div class="sec-row">
+        <div class="dog-card"><button id="dog-mocha" class="cat dog dog--mocha" type="button"></button><p class="dog-name"></p><p class="dog-role"></p></div>
+        <div class="dog-card"><button id="dog-maggie" class="cat dog dog--maggie" type="button"></button><p class="dog-name"></p><p class="dog-role"></p></div>
+      </div>
+      <p id="approval" class="approval" hidden></p>
+    </section>
+
+    <button id="cat-d" class="cat cat--d" type="button" aria-label="Cream cat winking in a party hat. Tap for a birthday reaction."></button>
+  </div>
+</main>
+
+<noscript><p style="position:fixed;inset:0;z-index:99;background:#fff;margin:0;padding:40px;text-align:center;font:1.3rem sans-serif">This birthday page needs JavaScript turned on 🎂</p></noscript>
+<script src="script.js"></script>
+</body>
+</html>
