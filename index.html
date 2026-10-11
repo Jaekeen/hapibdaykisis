@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="psst... someone made you something 🎂">
+<meta property="og:title" content="I may have made you a little something lol">
 <title>Happy Birthday! 🎂</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
@@ -18,20 +18,20 @@
 <!-- Welcome screen -->
 <section id="welcome" class="welcome">
   <div>
-    <p id="welcome-text" class="welcome-text">yoooooo... someone made you something 🎂</p>
-    <button id="open-btn" class="btn btn--pink" type="button">OPEN YOUR SURPRISE</button>
+    <p id="welcome-text" class="welcome-text">yoooooo... someone made you something hihihi</p>
+    <button id="open-btn" class="btn btn--pink" type="button">OPEN YOUR SURPRISE </button>
   </div>
   <div id="peek-cat" class="peek" aria-hidden="true"></div>
 </section>
 
-<!-- Main birthday page  -->
+<!-- Main birthday page (revealed after the button) -->
 <main id="main" hidden>
   <div id="bunting" class="bunting" aria-hidden="true"></div>
   <div id="decor" class="decor" aria-hidden="true"></div>
   <button id="music-toggle" class="music-toggle" type="button" aria-label="Birthday music" aria-pressed="false"><span aria-hidden="true">🎵</span></button>
 
   <div class="page">
-    <h1 id="greeting" class="greeting" tabindex="-1">HAPPY BIRTHDAY!! 🎂</h1>
+    <h1 id="greeting" class="greeting" tabindex="-1">HAPPY BIRTHDAY, KISIS!! 🎂</h1>
 
     <div class="stage">
       <div class="photo-drift"><div class="photo-bob"><div class="photo-wobble">
@@ -40,12 +40,15 @@
       <button id="cat-a" class="cat cat--a" type="button" aria-label="Orange cat in a party hat. Tap for a birthday reaction."></button>
       <button id="cat-b" class="cat cat--b" type="button" aria-label="White cat cheering in a party hat. Tap for a birthday reaction."></button>
       <button id="cat-c" class="cat cat--c" type="button" aria-label="Floating grey cat in a party hat. Tap for a birthday reaction."></button>
+      <button id="roam-mocha" class="cat dog dog--roam roam-mocha" type="button"></button>
+      <button id="roam-maggie" class="cat dog dog--roam roam-maggie" type="button"></button>
     </div>
 
     <div class="controls">
       <button id="chaos-btn" class="btn btn--pink" type="button">MORE CHAOS 🎉</button>
-      <button id="last-btn" class="btn btn--white" type="button" aria-controls="message-card">ONE LAST THING...</button>
+      <button id="last-btn" class="btn btn--white" type="button" aria-controls="message-card">OKAY, LAST ONE</button>
     </div>
+    <p id="chaos-warning" class="chaos-warning" role="alert" hidden></p>
 
     <section id="message-card" class="card" hidden tabindex="-1" aria-labelledby="card-title">
       <h2 id="card-title" class="sr-only">A birthday message for you</h2>

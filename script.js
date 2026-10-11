@@ -1,14 +1,14 @@
 /* =====================================================================
-   HAPI BDAY KISISSSSSSSSSSSSSSSS
+    HAPI BDAY KISIS
    ===================================================================== */
 const CONFIG = {
-  herName: "KISSES",
-  welcomeText: "I made something for u hehe",
+  herName: "Kisses",
+  welcomeText: "Helo, I made something for u hehe 🎂",
   greeting: "HAPPY BIRTHDAY, {name}!! 🎂",
 
   // ---- THE BIRTHDAY MESSAGE (blank line = new paragraph) ----
   message:
-    "HI AGAIN BIRTHDAY GIRLLLL HAHAHAHAHAHA HAPIIII BIRTHDAYYYYY🎂",
+    "HI AGAIN BIRTHDAY GIRLLLL HAHAHAHAHAHA HAPIIII BIRTHDAYYYYY🎂 I hope you're enjoying your dayyy!! okay byeeee HAHAHAHA",
   signature: "", 
 
   // ---- FILES (inside the assets folder) ----
@@ -17,14 +17,14 @@ const CONFIG = {
 
   // ---- SPEEDS (1 = normal, 2 = twice as fast, 0.5 = half) ----
   wobbleSpeed: 1, // her photo
-  catSpeed: 1.2, // idle cat animations
-  confettiAmount: 2, // how much confetti falls
+  catSpeed: 1, // idle cat animations
+  confettiAmount: 1.2, // how much confetti falls
   chaosSeconds: 5, // how long MORE CHAOS lasts
 
   // ---- COLORS ----
   colors: {
     ink: "#2d2a3e", // outlines and text
-    accent: "#cb1460", // main pink
+    accent: "#dd2370", // main pink
     accent2: "#7c4dff", // purple
     card: "#fff6fa", // message card background
     confetti: ["#ff4d8d", "#ffb703", "#2ec4b6", "#8a5cf6", "#3a86ff", "#ff7aa2", "#ffd23f"],
@@ -39,44 +39,79 @@ const CONFIG = {
     approval: "Final approval: Mocha & Maggie ✅",
     mocha: {
       name: "Mocha", role: "Head of security", photo: "assets/mocha.jpg",
-      sayings: [
-            "Don't listen to Maggie. I'm the favorite.",
+      sayings: ["Don't listen to Maggie. I'm the favorite.",
     "I was told there would be snacks.",
     "She's cute, but I'm cuter.",
-    "Okay fine, it's her birthday. 🙄",],
+    "Okay fine, it's her birthday. 🙄",
+   "I'm 5. I know what I'm doing.",
+   "I'm 5. I know what I'm doing.",
+  "Mocha (5) says happy birthday 🐾",
+  "Mocha (5) says happy birthday 🐾",
+"Birthday girl!! GIVE ME ATTENTION."],
+    
     },
     maggie: {
       name: "Maggie", role: "Chief birthday inspector", photo: "assets/maggie.jpg",
-      sayings: [
-        "Happy birthday! Now give me treats.",
+      sayings: ["Happy birthday! Now give me treats.",
     "I'm obviously the favorite child.",
     "She says she's cute. I agree.",
     "Can I have some of the birthday cake?",
-    "I demand cuddles immediately.",],
+    "I demand cuddles immediately.",
+      "I'm 2 and I want snacks.",
+        "I'm 2 and I want snacks.",
+         "Birthday girl!! GIVE ME ATTENTION.",
+         "Maggie (2) says happy birthday!! 🐾",
+         "Maggie (2) says happy birthday!! 🐾",
+  
+  ],
     },
+  },
+
+  // ---- THE DOGS LEAVE THEIR SPOTS, WANDER, THEN WALK BACK ----
+  dogRoam: { homeSeconds: [8, 16], legs: [3, 5], speed: 150 }, // seconds at their spot, stops per walk, walking speed (px/sec)
+
+  // ---- WHEN SOMEONE SPAMS "MORE CHAOS", THE DOGS GET ANGRY ----
+  // Counts taps inside windowSeconds. Warning, then scolding, then the button locks for cooldownSeconds.
+  dogAnger: {
+    warnAt: 4, scoldAt: 7, angryAt: 10, windowSeconds: 12, cooldownSeconds: 8,
+    warn: "psst... Mocha & Maggie are getting suspicious 👀",
+    scold: "STOP PRESSING IT!! Mocha & Maggie are getting ANGRY 💢",
+    angry: "TOO MUCH CHAOS. Mocha & Maggie are angry, the button is locked for a moment 🔒",
+    growls: ["GRRR", "WOOF!! (that means stop)", "*angry dog noises*", "ENOUGH CHAOS"],
   },
 
   // ---- FLOATING MESSAGES and CAT REACTIONS ----
   floaters: {
-    open: ["THE CATS HAVE ARRIVED", "IT'S YOUR DAY!!"],
-    chaos: ["PARTY MODE ACTIVATED", "MAXIMUM CONFETTI", "THE CATS ARE LOSING IT", "SECURITY HAS BEEN NOTIFIED"],
+    open: ["THE CATS HAVE ARRIVED", "IT'S YOUR DAY KISIS!!"],
+    chaos: ["PARTY MODE ACTIVATED", "THE CATS ARE LOSING IT", "SECURITY HAS BEEN NOTIFIED",     "THIS PARTY IS GETTING OUT OF HAND",
+    "NOBODY IS STOPPING THE CONFETTI",
+    "23RD BIRTHDAY CHAOS: ACTIVATED",],
     last: ["SPECIAL DELIVERY 💌"],
+    patrol: ["PATROL COMPLETE ✅", "ALL CLEAR. CAKE SAFE.", "SECURITY IS BACK AT THEIR POST",     "5-YEAR-OLD SECURITY CHIEF SAYS ALL CLEAR",
+    "2-YEAR-OLD ASSISTANT SECURITY OFFICER WANTS TREATS" ],
   },
   catSayings: [
-    "meow (birthday girl detected)",
+"meow (birthday girl detected)",
     "WARNING: cute birthday girl nearby",
     "23 but still baby",
     "Fun fact: she calls me Joe",
     "Apparently I'm allowed to call her Love",
-    "I demand pictures",
     "She likes being complimented (source: trust me)",
     "birthday girl = meal q",
     "Fun fact: she somehow makes everything funny",
     "She has officially made my eyes very blessed",
-    "she gets kilig then says 'kainis ka'",
-    "WARNING: dangerously cute",
     "please stop being this cute",
-
+      "coded with HTML, CSS, JavaScript",
+        "coded with HTML, CSS, JavaScript",
+         "website by jachin, obviously",
+          "website by jachin, obviously",
+          "website by jachin, obviously",
+          "website by jachin, obviously",
+          "website by jachin, obviously",
+          "website by jachin, obviously",
+          "website by jachin, obviously",
+           "this was supposed to be a simple birthday thing",
+            "this was supposed to be a simple birthday thing",
   ],
 };
 /* ===================== END OF THE PART YOU EDIT ===================== */
@@ -102,7 +137,7 @@ $("signature").textContent = CONFIG.signature;
 
 /* ---------- Greeting: every letter is its own bouncy span ---------- */
 (function buildGreeting() {
-  const h = $("greeting"), text = fill(CONFIG.greeting), L = CONFIG.colors.letters;
+  const h = $("greeting"), text = fill(CONFIG.greeting).toUpperCase(), L = CONFIG.colors.letters;
   h.setAttribute("aria-label", text);
   h.textContent = "";
   let i = 0;
@@ -213,10 +248,9 @@ const DOG_ART = {
 };
 $("sec-title").textContent = CONFIG.dogs.title;
 $("approval").textContent = CONFIG.dogs.approval;
-Object.entries(DOG_ART).forEach(([k, art]) => {
-  const d = CONFIG.dogs[k], el = $("dog-" + k), card = el.closest(".dog-card");
-  card.querySelector(".dog-name").textContent = d.name;
-  card.querySelector(".dog-role").textContent = d.role;
+Object.entries(DOG_ART).forEach(([k, art]) => [$("dog-" + k), $("roam-" + k)].forEach((el) => {
+  const d = CONFIG.dogs[k], card = el.closest(".dog-card");
+  if (card) { card.querySelector(".dog-name").textContent = d.name; card.querySelector(".dog-role").textContent = d.role; }
   el.setAttribute("aria-label", `${d.name}, ${d.role}. Tap for a message.`);
   el.innerHTML = `<span class="cat-move"><span class="cat-fx">${dogSVG(art)}</span></span><span class="cat-bubble" aria-hidden="true"></span>`;
   // If her real photo exists, swap the drawing for the photo (in a circle, wearing the party hat)
@@ -225,6 +259,74 @@ Object.entries(DOG_ART).forEach(([k, art]) => {
     el.querySelector(".cat-fx").innerHTML = `<span class="dog-photo"><img src="${d.photo}" alt=""><svg class="dog-hat" viewBox="44 0 52 54" aria-hidden="true">${partyHat(...art.hat)}</svg><i aria-hidden="true">${art.prop === "cake" ? "🎂" : "🔍"}</i></span>`;
   };
   probe.src = d.photo;
+}));
+
+/* ---------- Mocha and Maggie leave their spots, wander the page, then walk back to the security box ---------- */
+const rand = (a, b) => a + Math.random() * (b - a);
+const Roamers = ["mocha", "maggie"].map((k) => ({ k, home: $("dog-" + k), roam: $("roam-" + k), state: "home", x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0, legs: 0, pause: 0, called: false, next: Infinity }));
+let patrolHint = false;
+function place(r, tilt = 0) { r.roam.style.transform = `translate(${r.x}px,${r.y}px) rotate(${tilt}deg)`; }
+function wander(r) {
+  const w = r.roam.offsetWidth;
+  r.tx = rand(8, Math.max(9, innerWidth - w - 8));
+  r.ty = rand(70, Math.max(71, innerHeight - w * 0.9 - 8));
+}
+function leaveHome(r) {
+  const b = r.home.getBoundingClientRect();
+  r.roam.style.width = b.width + "px"; // same size as the one at home, so the swap is invisible
+  Object.assign(r, { x: b.left, y: b.top, vx: 0, vy: 0, state: "out", called: false, pause: 0, legs: Math.round(rand(...CONFIG.dogRoam.legs)) });
+  r.roam.classList.add("on");
+  r.home.style.visibility = "hidden";
+  r.home.closest(".dog-card").classList.add("away");
+  wander(r);
+  place(r);
+  if (!patrolHint) { patrolHint = true; setTimeout(() => toast("tap the page to call the dogs 🐕"), 1500); }
+}
+function arrive(r) {
+  r.state = "home";
+  r.roam.classList.remove("on", "is-running");
+  r.home.style.visibility = "";
+  r.home.closest(".dog-card").classList.remove("away");
+  r.next = performance.now() + rand(...CONFIG.dogRoam.homeSeconds) * 1000;
+  if (Math.random() < 0.5) floatText("patrol");
+}
+let lastT = performance.now();
+function roamLoop(now) {
+  const dt = Math.min((now - lastT) / 1000, 0.05);
+  lastT = now;
+  Roamers.forEach((r) => {
+    if (r.state === "home") { if (now > r.next && !$("main").hidden && !reduced()) leaveHome(r); return; }
+    if (now < r.pause) { r.roam.classList.remove("is-running"); return; } // sitting for a moment
+    r.roam.classList.add("is-running");
+    if (r.state === "return") { const b = r.home.getBoundingClientRect(); r.tx = b.left; r.ty = b.top; }
+    const dx = r.tx - r.x, dy = r.ty - r.y, d = Math.hypot(dx, dy) || 1;
+    if (d < (r.state === "return" ? 8 : 14)) {
+      if (r.state === "return") return arrive(r);
+      if (r.called) { r.called = false; r.pause = now + 1800; hearts(r.x + r.roam.offsetWidth / 2, r.y); }
+      if (--r.legs <= 0) r.state = "return"; else wander(r);
+      return;
+    }
+    const sp = Math.min(Math.max(d * 0.8, CONFIG.dogRoam.speed), 700) * (r.state === "return" ? 1.3 : 1);
+    r.vx += (dx / d * sp - r.vx) * Math.min(1, dt * 3);
+    r.vy += (dy / d * sp - r.vy) * Math.min(1, dt * 3);
+    r.x += r.vx * dt;
+    r.y += r.vy * dt;
+    place(r, Math.max(-8, Math.min(8, r.vx * 0.03)));
+  });
+  requestAnimationFrame(roamLoop);
+}
+requestAnimationFrame(roamLoop);
+// Tap the page (not a button) and any walking dog runs over to that spot
+document.addEventListener("pointerdown", (e) => {
+  if (e.target.closest("button")) return;
+  Roamers.forEach((r) => {
+    if (r.state !== "out") return;
+    Object.assign(r, { tx: e.clientX - r.roam.offsetWidth / 2, ty: e.clientY - r.roam.offsetHeight / 2, called: true, pause: 0, legs: Math.max(r.legs, 2) });
+  });
+});
+Roamers.forEach((r) => {
+  r.roam.addEventListener("click", () => { r.pause = performance.now() + 2500; }); // tap a walking dog: it stops to say hi
+  r.home.addEventListener("click", () => { if (r.state === "home") r.next = Math.min(r.next, performance.now() + 1500); }); // tap a dog at its spot: it goes on patrol
 });
 
 /* ---------- Confetti (one canvas, no libraries) ---------- */
@@ -349,7 +451,7 @@ function reactCat(cat, lines = CONFIG.catSayings) {
   say(cat, pick(lines));
 }
 ["cat-a", "cat-b", "cat-c", "cat-d"].forEach((id) => $(id).addEventListener("click", () => reactCat($(id))));
-["mocha", "maggie"].forEach((k) => $("dog-" + k).addEventListener("click", () => reactCat($("dog-" + k), CONFIG.dogs[k].sayings)));
+["mocha", "maggie"].forEach((k) => ["dog-", "roam-"].forEach((p) => $(p + k).addEventListener("click", () => reactCat($(p + k), CONFIG.dogs[k].sayings))));
 
 let danceTimer, chaosTimer;
 function dance(ms) {
@@ -423,9 +525,45 @@ $("open-btn").addEventListener("click", (e) => {
   setTimeout(() => floatText("open"), 1700);
   setTimeout(() => { $("welcome").hidden = true; $("greeting").focus({ preventScroll: true }); }, reduced() ? 0 : 450);
   setTimeout(() => say($("cat-d"), "poke me!"), 3500);
+  Roamers.forEach((r, i) => { r.next = performance.now() + 7000 + i * 5000; });
 });
 
+/* ---------- Don't spam MORE CHAOS: Mocha and Maggie get angry ---------- */
+const chaosBtn = $("chaos-btn"), chaosLabel = chaosBtn.textContent;
+const dogIds = () => Roamers.map((r) => (r.state === "home" ? r.home : r.roam)); // the visible Mocha and Maggie
+let chaosTaps = [], warnTimer;
+function warn(text, ms) {
+  const w = $("chaos-warning");
+  w.textContent = text;
+  w.hidden = false;
+  clearTimeout(warnTimer);
+  warnTimer = setTimeout(() => { w.hidden = true; }, ms);
+}
+function dogsAngry() {
+  const A = CONFIG.dogAnger;
+  chaosBtn.disabled = true;
+  chaosBtn.textContent = "DOGS ARE ANGRY 🐕💢";
+  document.body.classList.remove("is-chaos");
+  document.body.classList.add("dogs-angry");
+  warn(A.angry, A.cooldownSeconds * 1000);
+  Roamers.forEach((r) => { if (r.state === "out") { r.state = "return"; r.pause = 0; } r.next = performance.now() + (A.cooldownSeconds + 4) * 1000; });
+  dogIds().forEach((el) => say(el, pick(A.growls)));
+  setTimeout(() => {
+    chaosTaps = [];
+    chaosBtn.disabled = false;
+    chaosBtn.textContent = chaosLabel;
+    document.body.classList.remove("dogs-angry");
+    toast("the dogs have calmed down 🐕");
+  }, A.cooldownSeconds * 1000);
+}
+
 $("chaos-btn").addEventListener("click", (e) => {
+  const A = CONFIG.dogAnger, now = Date.now();
+  chaosTaps = chaosTaps.filter((t) => now - t < A.windowSeconds * 1000);
+  chaosTaps.push(now);
+  if (chaosTaps.length >= A.angryAt) return dogsAngry();
+  if (chaosTaps.length === A.scoldAt) { warn(A.scold, 5000); dogIds().forEach((el) => say(el, pick(A.growls))); }
+  else if (chaosTaps.length === A.warnAt) warn(A.warn, 4000);
   const r = e.currentTarget.getBoundingClientRect();
   Confetti.burst(r.left + r.width / 2, r.top + r.height / 2, 140, { power: 1000 });
   cannons();

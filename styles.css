@@ -142,6 +142,17 @@ body{margin:0;background:#fff;color:var(--ink);font-family:var(--font-body);over
 .approval{display:inline-block;margin:18px 0 0;padding:.35em .9em;border:3px solid #0b7a5c;border-radius:12px;color:#0b7a5c;font:800 1.1rem var(--font-fun);transform:rotate(-2deg);animation:stamp .5s cubic-bezier(.3,1.6,.5,1) both}
 @keyframes stamp{from{transform:scale(2.2) rotate(-12deg);opacity:0}}
 
+/* Roaming Mocha & Maggie: JS walks .dog--roam around, then swaps back to their spot in the security box */
+.cat.dog.dog--roam{display:none;position:fixed;left:0;top:0;z-index:6;max-width:none;will-change:transform}
+.cat.dog.dog--roam.on{display:block}
+.dog--roam.is-running .cat-move{animation:trot .42s ease-in-out infinite}
+@keyframes trot{50%{transform:translateY(-7px) rotate(3deg)}}
+.dog-card.away .dog-role::after{content:" \00b7  out on patrol \1F43E"}
+/* Angry dogs (after too many MORE CHAOS taps) */
+.dogs-angry .dog .cat-fx{animation:shake .12s ease-in-out infinite;filter:drop-shadow(0 0 8px #ff2d2d)}
+@keyframes shake{0%,100%{transform:translateX(-3px) rotate(-2deg)}50%{transform:translateX(3px) rotate(2deg)}}
+.chaos-warning{width:min(100%,30rem);margin:-14px 0 0;padding:.6em 1em;background:#fff1f1;border:3px solid #c0152f;border-radius:14px;box-shadow:4px 4px 0 #c0152f;color:#9b1026;font:800 1rem/1.3 var(--font-fun);text-align:center;animation:rise .4s ease-out both}
+
 /* Reduced motion: no movement at all (JS also skips confetti) */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
