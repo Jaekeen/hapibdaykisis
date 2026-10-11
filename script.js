@@ -12,7 +12,7 @@ const CONFIG = {
   signature: "", 
 
   // ---- FILES (inside the assets folder) ----
-  photo: "assets/kisis-photo.jpeg",
+  photo: "assets/kisis-photo.jpg",
   music: { file: "assets/birthday-song.mp3", volume: 0.5, loop: true }, // volume 0 to 1
 
   // ---- SPEEDS (1 = normal, 2 = twice as fast, 0.5 = half) ----
