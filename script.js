@@ -265,7 +265,10 @@ Object.entries(DOG_ART).forEach(([k, art]) => [$("dog-" + k), $("roam-" + k)].fo
 const rand = (a, b) => a + Math.random() * (b - a);
 const Roamers = ["mocha", "maggie"].map((k) => ({ k, home: $("dog-" + k), roam: $("roam-" + k), state: "home", x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0, legs: 0, pause: 0, called: false, next: Infinity }));
 let patrolHint = false;
-function place(r, tilt = 0) { r.roam.style.transform = `translate(${r.x}px,${r.y}px) rotate(${tilt}deg)`; }
+function place(r, tilt = 0) {
+  const x = Math.min(Math.max(r.x, 0), innerWidth - r.roam.offsetWidth);
+  r.roam.style.transform = `translate(${x}px,${r.y}px) rotate(${tilt}deg)`;
+}
 function wander(r) {
   const w = r.roam.offsetWidth;
   r.tx = rand(8, Math.max(9, innerWidth - w - 8));
