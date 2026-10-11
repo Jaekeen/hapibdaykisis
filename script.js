@@ -8,7 +8,7 @@ const CONFIG = {
 
   // ---- THE BIRTHDAY MESSAGE ----
   message:
-    "HI AGAIN BIRTHDAY GIRLLLL HAHAHAHAHAHA HAPIIII BIRTHDAYYYYY 🎂 I hope you're enjoying your dayyy!! and I hope you have a really good one today and get to do whatever makes you happy HAHAHAHA okay byeeeeeee",
+    "HI AGAIN BIRTHDAY GIRLLLL HAHAHAHAHAHA HAPIIII BIRTHDAYYYYY 🎂 I hope you're enjoying your dayyy!! and I hope you have a really good one today and get to do whatever makes you happy HAHAHAHA okay byeeeeeee -from your #1 fan ",
   signature: "", 
 
   // ---- (inside the assets folder) ----
