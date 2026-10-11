@@ -9,7 +9,8 @@
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{touch-action:manipulation}
 body{margin:0;background:#fff;color:var(--ink);font-family:var(--font-body);overflow-x:hidden;-webkit-tap-highlight-color:transparent}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:4px solid var(--accent2);outline-offset:4px}
@@ -34,7 +35,7 @@ body{margin:0;background:#fff;color:var(--ink);font-family:var(--font-body);over
 @keyframes fade-out{to{opacity:0}}
 
 /* Page */
-.page{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:34px;padding:76px 20px 96px}
+.page{position:relative;z-index:1;overflow-x:clip;min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:34px;padding:76px 20px 96px}
 .greeting{margin:0;text-align:center;font:800 clamp(2rem,9vw,4.2rem)/1.1 var(--font-fun);max-width:14em;outline:none}
 .word{display:inline-block;white-space:nowrap}
 .letter{display:inline-block;color:var(--lc);animation:pop .6s cubic-bezier(.3,1.6,.5,1) calc(var(--i)*40ms) both,wave 2.8s ease-in-out calc(1.2s + var(--i)*90ms) infinite}
@@ -115,7 +116,7 @@ body{margin:0;background:#fff;color:var(--ink);font-family:var(--font-body);over
 .decor{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .decor span{position:absolute;opacity:.8;animation:twinkle 3s ease-in-out infinite}
 @keyframes twinkle{50%{transform:scale(1.5) rotate(20deg);opacity:.35}}
-.bunting{position:fixed;top:0;left:0;right:0;z-index:4;display:flex;justify-content:center;pointer-events:none;animation:bunting-in .8s cubic-bezier(.3,1.4,.5,1) both}
+.bunting{position:fixed;top:0;left:0;right:0;height:48px;overflow:hidden;z-index:4;display:flex;justify-content:center;pointer-events:none;animation:bunting-in .8s cubic-bezier(.3,1.4,.5,1) both}
 .flag{flex:0 0 46px;height:40px;background:var(--c);clip-path:polygon(4% 0,96% 0,50% 100%);transform-origin:50% 0;animation:flag 3s ease-in-out infinite;animation-delay:calc(var(--i)*-.4s)}
 @keyframes flag{50%{transform:rotate(5deg)}}
 @keyframes bunting-in{from{transform:translateY(-100%)}}
