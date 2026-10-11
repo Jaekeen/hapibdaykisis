@@ -42,7 +42,7 @@ const CONFIG = {
    "I'm 5. I know what I'm doing.",
    "I'm 5. I know what I'm doing.",
   "Mocha (5) says happy birthday 🐾",
-"Birthday girl!! GIVE ME ATTENTION."
+"Birthday girl!! GIVE ME ATTENTION.",
                  "CASE FILE #005: a whole birthday website. Explain yourself, Jachin.",
   "OFFICIAL STATEMENT: he wouldn't have made all this for just anybody.",
                 "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
@@ -104,7 +104,7 @@ const CONFIG = {
     "She likes being complimented (source: trust me)",
       "fun fact: someone gets happy when you reply",
          "this website was NOT made under normal circumstances",
-       "you didn't hear this from us, okay?"
+       "you didn't hear this from us, okay?",
     "Fun fact: she somehow makes everything funny",
     "She has officially made my eyes very blessed",
     "please stop being this cute",
