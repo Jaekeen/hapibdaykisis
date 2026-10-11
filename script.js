@@ -6,16 +6,14 @@ const CONFIG = {
   welcomeText: "Helo, I made something for u hehe 🎂",
   greeting: "HAPPY BIRTHDAY, {name}!! 🎂",
 
-  // ---- THE BIRTHDAY MESSAGE (blank line = new paragraph) ----
+  // ---- THE BIRTHDAY MESSAGE ----
   message:
-    "HI AGAIN BIRTHDAY GIRLLLL HAHAHAHAHAHA HAPIIII BIRTHDAYYYYY🎂 I hope you're enjoying your dayyy!! okay byeeee HAHAHAHA",
+    "HI AGAIN BIRTHDAY GIRLLLL HAHAHAHAHAHA HAPIIII BIRTHDAYYYYY 🎂 I hope you're enjoying your dayyy!! and I hope you have a really good one today and get to do whatever makes you happy HAHAHAHA okay byeeeeeee",
   signature: "", 
 
-  // ---- FILES (inside the assets folder) ----
+  // ---- (inside the assets folder) ----
   photo: "assets/kisis-photo.jpg",
-  music: { file: "assets/birthday-song.mp3", volume: 0.5, loop: true }, // volume 0 to 1
-
-  // ---- SPEEDS (1 = normal, 2 = twice as fast, 0.5 = half) ----
+  music: { file: "assets/birthday-song.mp3", volume: 1, loop: true }, // volume 
   wobbleSpeed: 1, // her photo
   catSpeed: 1, // idle cat animations
   confettiAmount: 1.2, // how much confetti falls
@@ -44,15 +42,12 @@ const CONFIG = {
    "I'm 5. I know what I'm doing.",
    "I'm 5. I know what I'm doing.",
   "Mocha (5) says happy birthday 🐾",
-  "Mocha (5) says happy birthday 🐾",
 "Birthday girl!! GIVE ME ATTENTION."
+                 "CASE FILE #005: a whole birthday website. Explain yourself, Jachin.",
   "OFFICIAL STATEMENT: he wouldn't have made all this for just anybody.",
-                    "I've been monitoring Jachin. He acts different around you.",
                 "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
-                "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
-                "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
-                   "OFFICIAL FINDING: you are not just any birthday girl",
                  "FIVE YEARS ON THE JOB. I KNOW A CRUSH WHEN I SEE ONE.",
+                "From what this website tells me, he really wanted you to feel special today.",
                 
                ],
         
@@ -62,17 +57,18 @@ const CONFIG = {
       name: "Maggie", role: "Chief birthday inspector", photo: "assets/maggie.jpg",
       sayings: ["Happy birthday! Now give me treats.",
     "I'm obviously the favorite child.",
-    "She says she's cute. I agree.",
     "Can I have some of the birthday cake?",
     "I demand cuddles immediately.",
       "I'm 2 and I want snacks.",
-        "I'm 2 and I want snacks.",
          "Birthday girl!! GIVE ME ATTENTION.",
-         "Maggie (2) says happy birthday!! 🐾",
          "Maggie (2) says happy birthday!! 🐾",
                 "JACHIN TALKS TO YOU AND STARTS SMILING HAHAHAHAHA",
                     "JACHIN THINKS YOU'RE CUTE BTW. OKAY BYEEE",
-                "SECURITY BREACH: Jachin's feelings have been leaked."
+                "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
+                "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
+                "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
+                    "OMG OMG OMG THE GUY WHO MADE THIS LIKES OUR HUMAN",
+                   "GUYS I FOUND OUT WHY THE CATS ARE HERE. THEY'RE COVERING FOR JACHIN.",
   
   ],
     },
@@ -103,35 +99,28 @@ const CONFIG = {
   },
   catSayings: [
 "meow (birthday girl detected)",
-    "WARNING: cute birthday girl nearby",
-    "23 but still baby",
     "Fun fact: she calls me Joe",
     "Apparently I'm allowed to call her Love",
     "She likes being complimented (source: trust me)",
       "fun fact: someone gets happy when you reply",
-         "this website was NOT made under normal circumstances 😭",
+         "this website was NOT made under normal circumstances",
        "you didn't hear this from us, okay?"
     "Fun fact: she somehow makes everything funny",
     "She has officially made my eyes very blessed",
     "please stop being this cute",
       "coded with HTML, CSS, JavaScript",
-        "coded with HTML, CSS, JavaScript",
          "website by jachin, obviously",
-          "website by jachin, obviously",
-          "website by jachin, obviously",
+      "Jachin has a crush on you. there, we said it.",
+    "Jachin has a crush on you. there, we said it.",
+    "we asked Jachin if he likes you. he suddenly became very quiet.",
+       "the cats have confirmed that this is NOT just birthday-greeting behavior",
       "fun fact: Jachin doesn't put this much effort into just anyone...",
-      "fun fact: Jachin doesn't put this much effort into just anyone...",
-      "fun fact: Jachin doesn't put this much effort into just anyone...",
-      "the cats have reviewed Jachin's search history. he is DOWN BAD.",
-          "website by jachin, obviously",
-          "website by jachin, obviously",
           "CONFIDENTIAL: Jachin thinks you're really, really pretty.",
         "meow meow... Jachin likes you tho. don't tell him we told you 🤫",
-        "meow meow... Jachin likes you tho. don't tell him we told you 🤫",
-          "website by jachin, obviously",
-          "website by jachin, obviously",
            "this was supposed to be a simple birthday thing",
-            "this was supposed to be a simple birthday thing",
+     "someone's been catching feelings and it isn't any of us",
+    "You don't have to do anything extraordinary to make a person enjoy your company.",
+     "FINAL REPORT: Jachin likes you, and I think he's genuinely glad he met you."
   ],
 };
 /* ===================== END OF THE PART YOU EDIT ===================== */
