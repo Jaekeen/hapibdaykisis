@@ -13,7 +13,7 @@ const CONFIG = {
 
   // ---- (inside the assets folder) ----
   photo: "assets/kisis-photo.jpg",
-  music: { file: "assets/birthday-song.mp3", volume: 1.5, loop: true }, // volume 
+  music: { file: "assets/birthday-song.mp3", volume: 1.1, loop: true }, // volume 
   wobbleSpeed: 1, // her photo
   catSpeed: 1, // idle cat animations
   confettiAmount: 1.2, // how much confetti falls
@@ -42,12 +42,11 @@ const CONFIG = {
    "I'm 5. I know what I'm doing.",
    "I'm 5. I know what I'm doing.",
   "Mocha (5) says happy birthday 🐾",
-"Birthday girl!! GIVE ME ATTENTION.",
-                 "CASE FILE #005: a whole birthday website. Explain yourself, Jachin.",
+  "Birthday girl!! GIVE ME ATTENTION.",
+    "CASE FILE #005: a whole birthday website. Explain yourself, Jachin.",
   "OFFICIAL STATEMENT: he wouldn't have made all this for just anybody.",
-                "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
-                 "FIVE YEARS ON THE JOB. I KNOW A CRUSH WHEN I SEE ONE.",
-                "From what this website tells me, he really wanted you to feel special today.",
+    "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
+    "From what this website tells me, he really wanted you to feel special today.",
                 
                ],
         
@@ -62,20 +61,19 @@ const CONFIG = {
       "I'm 2 and I want snacks.",
          "Birthday girl!! GIVE ME ATTENTION.",
          "Maggie (2) says happy birthday!! 🐾",
-                
-                    "JACHIN THINKS YOU'RE CUTE BTW. OKAY BYEEE",
+                "JACHIN THINKS YOU'RE CUTE BTW. OKAY BYEEE",
                 "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
                 "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
-                "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
-                    "OMG OMG OMG THE GUY WHO MADE THIS LIKES OUR HUMAN",
-                   "GUYS I FOUND OUT WHY THE CATS ARE HERE. THEY'RE COVERING FOR JACHIN.",
+                "OMG OMG OMG THE GUY WHO MADE THIS LIKES OUR HUMAN",
+                "GUYS I FOUND OUT WHY THE CATS ARE HERE. THEY'RE COVERING FOR JACHIN.",
+                "Maggie has no idea what's happening but she's excited.",
   
   ],
     },
   },
 
   // ---- THE DOGS LEAVE THEIR SPOTS, WANDER, THEN WALK BACK ----
-  dogRoam: { homeSeconds: [8, 16], legs: [3, 5], speed: 150 }, // seconds at their spot, stops per walk, walking speed (px/sec)
+  dogRoam: { homeSeconds: [20, 40], legs: [3, 5], speed: 150 }, // seconds at their spot, stops per walk, walking speed (px/sec)
 
   // ---- WHEN SOMEONE SPAMS "MORE CHAOS", THE DOGS GET ANGRY ----
   // Counts taps inside windowSeconds. Warning, then scolding, then the button locks for cooldownSeconds.
@@ -92,7 +90,8 @@ const CONFIG = {
     open: ["THE CATS HAVE ARRIVED", "IT'S YOUR DAY KISIS!!"],
     chaos: ["PARTY MODE ACTIVATED", "THE CATS ARE LOSING IT", "SECURITY HAS BEEN NOTIFIED",     "THIS PARTY IS GETTING OUT OF HAND",
     "NOBODY IS STOPPING THE CONFETTI",
-    "23RD BIRTHDAY CHAOS: ACTIVATED",],
+    "23RD BIRTHDAY CHAOS: ACTIVATED",
+           "🚨 BIRTHDAY EMERGENCY 🚨 We have detected an unusually high level of cuteness.",],
     last: ["SPECIAL DELIVERY 💌"],
     patrol: ["PATROL COMPLETE ✅", "ALL CLEAR. CAKE SAFE.", "SECURITY IS BACK AT THEIR POST",     "5-YEAR-OLD SECURITY CHIEF SAYS ALL CLEAR",
     "2-YEAR-OLD ASSISTANT SECURITY OFFICER WANTS TREATS" ],
@@ -110,17 +109,20 @@ const CONFIG = {
     "please stop being this cute",
       "coded with HTML, CSS, JavaScript",
          "website by jachin, obviously",
-      "Jachin has a crush on you. there, we said it.",
     "Jachin has a crush on you. there, we said it.",
     "we asked Jachin if he likes you. he suddenly became very quiet.",
        "the cats have confirmed that this is NOT just birthday-greeting behavior",
-      "fun fact: Jachin doesn't put this much effort into just anyone...",
           "CONFIDENTIAL: Jachin thinks you're really, really pretty.",
-        "meow meow... Jachin likes you tho. don't tell him we told you 🤫",
            "this was supposed to be a simple birthday thing",
      "someone's been catching feelings and it isn't any of us",
     "You don't have to do anything extraordinary to make a person enjoy your company.",
-     "FINAL REPORT: Jachin likes you, and I think he's genuinely glad he met you."
+     "FINAL REPORT: Jachin likes you, and I think he's genuinely glad he met you.",
+      "we were told there would be cake. where is it.",
+      "meow meow. translation: HAPPY BIRTHDAYYYYY.",
+      "the cats have officially taken over the website.",
+      "psst... Joe definitely spent way too much time making this.",
+      "you didn't hear this from us, but someone is very glad he met you.",
+      
   ],
 };
 /* ===================== END OF THE PART YOU EDIT ===================== */
