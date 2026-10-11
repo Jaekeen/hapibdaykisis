@@ -586,6 +586,6 @@ $("last-btn").addEventListener("click", (e) => {
   Confetti.burst(innerWidth / 2, innerHeight * 0.6, 90, { power: 700 });
   floatText("last");
   dance(1500);
-  card.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "center" });
-  card.focus({ preventScroll: true });
+  card.scrollIntoView({ behavior: "instant", block: "center" });
+  $("sr-status").textContent = "Your birthday message is here.";
 });
