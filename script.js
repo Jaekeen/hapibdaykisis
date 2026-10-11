@@ -32,8 +32,6 @@ const CONFIG = {
   },
 
   // ---- MOCHA (brown) AND MAGGIE (white) ----
-  // The roles and sayings are jokes made up for this page. Edit freely.
-  // Optional real photos: add assets/mocha.jpg and assets/maggie.jpg and they replace the drawings automatically.
   dogs: {
     title: "Birthday party security",
     approval: "Final approval: Mocha & Maggie ✅",
@@ -47,7 +45,17 @@ const CONFIG = {
    "I'm 5. I know what I'm doing.",
   "Mocha (5) says happy birthday 🐾",
   "Mocha (5) says happy birthday 🐾",
-"Birthday girl!! GIVE ME ATTENTION."],
+"Birthday girl!! GIVE ME ATTENTION."
+  "OFFICIAL STATEMENT: he wouldn't have made all this for just anybody.",
+                    "I've been monitoring Jachin. He acts different around you.",
+                "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
+                "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
+                "I've guarded this household for 5 years. I've never seen Jachin act this suspicious.",
+                   "OFFICIAL FINDING: you are not just any birthday girl",
+                 "FIVE YEARS ON THE JOB. I KNOW A CRUSH WHEN I SEE ONE.",
+                
+               ],
+        
     
     },
     maggie: {
@@ -62,6 +70,9 @@ const CONFIG = {
          "Birthday girl!! GIVE ME ATTENTION.",
          "Maggie (2) says happy birthday!! 🐾",
          "Maggie (2) says happy birthday!! 🐾",
+                "JACHIN TALKS TO YOU AND STARTS SMILING HAHAHAHAHA",
+                    "JACHIN THINKS YOU'RE CUTE BTW. OKAY BYEEE",
+                "SECURITY BREACH: Jachin's feelings have been leaked."
   
   ],
     },
@@ -97,7 +108,9 @@ const CONFIG = {
     "Fun fact: she calls me Joe",
     "Apparently I'm allowed to call her Love",
     "She likes being complimented (source: trust me)",
-    "birthday girl = meal q",
+      "fun fact: someone gets happy when you reply",
+         "this website was NOT made under normal circumstances 😭",
+       "you didn't hear this from us, okay?"
     "Fun fact: she somehow makes everything funny",
     "She has officially made my eyes very blessed",
     "please stop being this cute",
@@ -106,8 +119,15 @@ const CONFIG = {
          "website by jachin, obviously",
           "website by jachin, obviously",
           "website by jachin, obviously",
+      "fun fact: Jachin doesn't put this much effort into just anyone...",
+      "fun fact: Jachin doesn't put this much effort into just anyone...",
+      "fun fact: Jachin doesn't put this much effort into just anyone...",
+      "the cats have reviewed Jachin's search history. he is DOWN BAD.",
           "website by jachin, obviously",
           "website by jachin, obviously",
+          "CONFIDENTIAL: Jachin thinks you're really, really pretty.",
+        "meow meow... Jachin likes you tho. don't tell him we told you 🤫",
+        "meow meow... Jachin likes you tho. don't tell him we told you 🤫",
           "website by jachin, obviously",
           "website by jachin, obviously",
            "this was supposed to be a simple birthday thing",
