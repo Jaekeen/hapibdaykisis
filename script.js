@@ -62,7 +62,7 @@ const CONFIG = {
       "I'm 2 and I want snacks.",
          "Birthday girl!! GIVE ME ATTENTION.",
          "Maggie (2) says happy birthday!! 🐾",
-                "JACHIN TALKS TO YOU AND STARTS SMILING HAHAHAHAHA",
+                
                     "JACHIN THINKS YOU'RE CUTE BTW. OKAY BYEEE",
                 "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
                 "we asked the creator whether he likes you. he gave us a whole website instead of an answer.",
