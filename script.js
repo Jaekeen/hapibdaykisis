@@ -13,7 +13,7 @@ const CONFIG = {
 
   // ---- (inside the assets folder) ----
   photo: "assets/kisis-photo.jpg",
-  music: { file: "assets/birthday-song.mp3", volume: 1, loop: true }, // volume 
+  music: { file: "assets/birthday-song.mp3", volume: 1.5, loop: true }, // volume 
   wobbleSpeed: 1, // her photo
   catSpeed: 1, // idle cat animations
   confettiAmount: 1.2, // how much confetti falls
